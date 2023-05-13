@@ -2,14 +2,12 @@
 
 <?php
 
-
 class User {
-
-  function __construct(private string $username, private string $password){}
-
-
+  public int $id;
+  public string $first_name;
+  public string $last_name;
+  public string $username;
+  public string $password;
 }
-
-
 
 ?>

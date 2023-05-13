@@ -3,14 +3,18 @@
 
 
   require_once('app/app.php');
-  // ensure_user_is_authenticated();
-  //echo APP_PATH;
+  ensure_user_is_authenticated();
   
-  Data::init(new MysqlDataProvider());
-  $data = Data::get_clients();
-  Data::close();
+  try {
+    Data::init(new MysqlDataProvider());
+    $data = Data::get_clients();
+    Data::close();
+    load_view('index', $data);
+  } catch (Exception $e) {
+    // TODO : show error indication
+    redirect('error.php?id=1');
+  }
 
-  load_view('index', $data);
 
 
 ?>

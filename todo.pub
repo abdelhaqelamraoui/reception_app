@@ -5,6 +5,14 @@ TODO [0] : add the archiving part
 TODO [0] : add prompts and dialogs
 TODO [0] : organize more all project
 
+TODO [0] : Use Javascript to separate backend from the frontend
+    - Fetch ?
+    - XmlHTTPRequest ?
+    - Ajax ?
 
+TODO [0] : prevent editing or updating a client via the URL but 
+        only if the request is sent from the index page
+
+TODO [0] : add search option for the admin
 
 TODO [0] : styling (last think this of !)

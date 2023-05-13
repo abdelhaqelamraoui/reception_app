@@ -9,7 +9,7 @@
     <ol>
       <?php foreach($model as $index => $client):?>
         <li>
-          <!-- <--span>< ?=$client->id?></span> -->
+          <span>[<?=$client->id?>]</span>
           <span><?=$client->name?></span>
           <span><a href="edit.php?id=<?=$client->id?>">Edit</a></span>
           <span><a href="remove.php?id=<?=$client->id?>">Remove</a></span>

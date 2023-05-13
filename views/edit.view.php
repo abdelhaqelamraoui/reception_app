@@ -10,7 +10,9 @@
       <span><?=$model->id?></span>
       <input type="text" name="new-name" value="<?=$model->name ?>"/>
       <button type="submit" name="update" id="update">Update</button>
-      <button type="submit" name="cancel" id="cancel">Cancel</button>
+      <button id="cancel">
+        <a href="index.php">Cancel</a>
+      </button>
       <input type="hidden" name="client-id" value="<?=$model->id?>"/>
     </form>
 <?php endif ?>

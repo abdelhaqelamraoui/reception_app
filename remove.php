@@ -3,7 +3,8 @@
 
 
   require_once('app/app.php');
-  // TODO : ensure user is authenticated
+
+  ensure_user_is_authenticated();
 
   /* 
     GET part for redirection from the index page in order to delete
@@ -45,15 +46,13 @@
       $id = intval(sanitize($_POST['client-id']));
       var_dump($id);
       Data::init(new MysqlDataProvider());
-      if(Data::delete_client($id)) {
+      if(!Data::delete_client($id)) {
         // TODO : give the user an indication abount issuing deletion
+        redirect('error.php?id='.ERROR['remove']);
       }
       Data::close();
-    } elseif(isset($_POST['cancel'])) {
-      // TODO : give the user an indication abount canceling
       redirect('index.php');
-    }
-    redirect('index.php');
+    } 
   }
   
   

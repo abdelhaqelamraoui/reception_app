@@ -66,33 +66,6 @@
     
   }
 
-
-
-
-  // function authenticate_user($email, $password) {
-  //   $users = CONFIG['users'];
-  //   if(!isset($users[$email])) {
-  //     return false;
-  //   }
-
-  //   $user_password = $users[$email];
-
-  //   return $password === $user_password;
-  // }
-
-  function is_user_authenticated() {
-    return isset($_SESSION['status']);
-  }
-    
-  /**
-   * switches to login page if user is not logged in
-   * @return void
-   */
-  function ensure_user_is_authenticated() {
-    if(!is_user_authenticated()) {
-      redirect('../login.php');
-    }
-  }
   
   /**
    * capitalizes all the words of a string
@@ -101,5 +74,18 @@
     return implode($sep, array_map('ucfirst' , explode($sep, $str)));
   }
   
+
+  function start_session() {
+    if(session_status() === PHP_SESSION_NONE) {
+      session_start();
+    }
+  }
+
+  function destroy_session() {
+    if(session_status() === PHP_SESSION_ACTIVE) {
+      session_unset();
+      session_destroy();
+    }
+  }
 
 ?>

@@ -19,11 +19,14 @@ final class Data {
   }
 
   static function add_client(string $name) {
-    return self::$dp->add_client($name);
+    return self::$dp->add_client($name) 
+        && self::$dp->archive_new_client($name);
+    
   }
 
   static function update_client(int $id, string $new_name) {
-    return self::$dp->update_client($id, $new_name);
+    return self::$dp->archive_edited_client($id, $new_name)
+        && self::$dp->update_client($id, $new_name);
   }
 
   static function delete_client(int $id) {
@@ -41,6 +44,11 @@ final class Data {
 
   static function close() {
     self::$dp->close();
+  }
+
+  
+  static function get_archived_clients() {
+    return self::$dp->get_archived_clients();
   }
 }
 

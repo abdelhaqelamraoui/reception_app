@@ -3,8 +3,8 @@
 
 
   require_once('app/app.php');
-  // TODO: ensure user is authenticated
-  // ensure_user_is_authenticated();
+
+  ensure_user_is_authenticated();
  
   
   /* 
@@ -50,13 +50,11 @@
           } else {
             // TODO : show an error
             // output('Error updating client');
+            redirect('error.php?id='.ERROR['edit']);
           }
           Data::close();
         }
       }
-    } elseif(isset($_POST['cancel'])) {
-      // TODO : show an indicaton about canceling
-      redirect('index.php');
     }
   }
 

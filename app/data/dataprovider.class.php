@@ -22,6 +22,14 @@ abstract class DataProvider {
 
   abstract function close();
 
+  // Archive part
+
+  abstract function archive_new_client(string $name);
+
+  abstract function archive_edited_client(int $id, string $new_name);
+
+  abstract function get_archived_clients();
+
 }
 
 
