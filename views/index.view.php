@@ -1,30 +1,41 @@
 
 
-<div>
+<div class="container">
 
-  <h1>Les clients</h1>
+  <h3 class="">Clients</h3>
 
   <div>
 
-    <ol>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+        <th>Number</th>
+        <th>Client ID</th>
+        <th>Name</th>                 
+        </tr>
+      </thead>
+      <tbody>
       <?php foreach($model as $index => $client):?>
-        <li>
-          <span>[<?=$client->id?>]</span>
-          <span><?=$client->name?></span>
-          <span><a href="edit.php?id=<?=$client->id?>">Edit</a></span>
-          <span><a href="remove.php?id=<?=$client->id?>">Remove</a></span>
-        </li>
+        <tr>
+          <td>[<?=$index?>]</td>
+          <td>[<?=$client->id?>]</td>
+          <td><?=$client->name?></td> 
+          <td><a href="edit.php?id=<?=$client->id?>" class="link">Edit</a></td>
+          <td><a href="remove.php?id=<?=$client->id?>" class="link link-danger">Remove</a></td>                   
+      </tr>
       <?php endforeach?>
-     
-    </ol>
+      </tbody>
+    </table>
 
     
     <div>
       <form action="./scripts/index.script.php" method="post" >
-        <input type="text" name="client-name" placeholder="Karim El Karimi">
-        <button type="submit" name="ajouter">Ajouter</button>
+        <div class="input-group">
+          <input type="text" name="client-name" placeholder="Karim El Karimi" class="form-control">
+          <button type="submit" name="ajouter" class="btn btn-success">Ajouter</button>
+        </div>
       </form>
-  </div>
+    </div>
 
   </div>
 </div>

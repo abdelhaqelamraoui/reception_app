@@ -1,42 +1,40 @@
 
 
-<div>
+<div class="container">
 
-  <h1>Archive of clients</h1>
+  <h3 class="">Admin
+    <a href="./admin.php" class="link fs-5">[Clients]</a>
+    <a href="./archive.php" class="link fs-5">[Archive]</a>
+  </h3>
 
-  <div>
-    <div>
-      <a href="admin.php">Back</a>
-    </div>
+    <table class="table table-striped">
 
-    <ol>
-    <li>
-        <span>ID</span>
-        <span>Name</span>          
-        <span>Reception date</span>          
-        <span>Reception time</span>          
-        <span>Old name</span>          
-        <span>Last modification</span>          
-      </li>
-      <?php foreach($model as $index => $archived_client):?>
-        <li>
-          <span>[<?=$archived_client->id?>]</span>
-          <span><?=$archived_client->name?></span>          
-          <span><?=$archived_client->reception_date?></span>          
-          <span><?=$archived_client->reception_time?></span>          
-          <span><?=$archived_client->old_name?></span>          
-          <span><?=$archived_client->last_modification?></span>          
-        </li>
-      <?php endforeach?>
-     
-    </ol>
+      <thead>
+        <tr>
+        <th>Number</th>
+        <th>Client ID</th>
+        <th>Name</th>          
+        <th>Reception date</th>          
+        <th>Reception time</th>          
+        <th>Old name</th>          
+        <th>Last modification</th>
+        </tr>
+      </thead>
 
-    <div>
-      <form action="./scripts/index.script.php" method="post" >
-        <input type="text" name="client-name" placeholder="Karim El Karimi">
-        <button type="submit" name="ajouter">Ajouter</button>
-      </form>
-    </div>
+      <tbody>
+        <?php foreach($model as $index => $archived_client):?>
+          <tr>
+            <td>[<?=$index?>]</td>
+            <td>[<?=$archived_client->id?>]</td>
+            <td><?=$archived_client->name?></td>          
+            <td><?=$archived_client->reception_date?></td>          
+            <td><?=$archived_client->reception_time?></td>          
+            <td><?=$archived_client->old_name?></td>          
+            <td><?=$archived_client->last_modification?></td>          
+          </tr>
+        <?php endforeach?>
+      </tbody>
 
-  </div>
+    </table>
+  
 </div>

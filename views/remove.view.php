@@ -1,6 +1,6 @@
 
 
-<div>
+<div class="container">
 
   <h1>Remove: <?=$model->name?></h1>
 

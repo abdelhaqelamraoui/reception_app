@@ -64,8 +64,8 @@ class MysqlDataProvider extends DataProvider {
   function archive_edited_client(int $id, string $new_name) {
     $old_name = $this->get_client($id)->name;
     $sql_lm = "SELECT CONCAT(CURDATE(), ' ', CURTIME())";
-    $sql = "UPDATE archive SET name = :name, old_name = '$old_name', last_modification = ($sql_lm);";
-    return $this->db->execute($sql, [':name' => $new_name]);
+    $sql = "UPDATE archive SET name = :name, old_name = '$old_name', last_modification = ($sql_lm) WHERE id = :id";
+    return $this->db->execute($sql, [':name' => $new_name, ':id' => $id]);
   }
 
 

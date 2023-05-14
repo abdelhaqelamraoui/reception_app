@@ -1,13 +1,21 @@
 
 
 
+<div class="container-fluid d-flex align-items-center justify-content-center" id="form-container">
 
-<form method="post">
-  <label for="username">Username</label>
-  <input type="text" name="username" id="username">
-  <br>
-  <label for="password">password</label>
-  <input type="password" name="password" id="password">
-  <br>
-  <button type="submit" name="log-in">Log in</button>
-</form>
+  <form method="post" class="login-form p-4 border border-2 rounded">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" name="username" id="username" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" name="password" id="password" class="form-control">
+    </div>
+    <div class="text-center">
+      <button type="submit" name="log-in" class="btn btn-primary px-4">Log in</button>
+    </div>
+  
+  </form>
+
+</div>

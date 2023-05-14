@@ -77,12 +77,13 @@
 
   function start_session() {
     if(session_status() === PHP_SESSION_NONE) {
-      session_start();
+      return session_start();
     }
+    return true; // there is an active session
   }
 
   function destroy_session() {
-    if(session_status() === PHP_SESSION_ACTIVE) {
+    if(start_session()) {
       session_unset();
       session_destroy();
     }
