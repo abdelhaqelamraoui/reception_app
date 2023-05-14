@@ -11,6 +11,24 @@ body {
 }
 
 
+.toggler-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  height: 30px;
+
+}
+
+.toggler-button div {
+  height: 2px;
+  width: 25px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+
 .login-form {
   width: 340px;
 

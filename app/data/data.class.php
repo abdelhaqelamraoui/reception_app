@@ -19,9 +19,7 @@ final class Data {
   }
 
   static function add_client(string $name) {
-    return self::$dp->add_client($name) 
-        && self::$dp->archive_new_client($name);
-    
+    return self::$dp->add_client($name) && self::$dp->archive_new_client($name);
   }
 
   static function update_client(int $id, string $new_name) {

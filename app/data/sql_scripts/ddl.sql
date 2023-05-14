@@ -23,12 +23,6 @@ create table if not exists reception.user (
 );
 
 
--- client [simple]
--- create table if not exists reception.client (
---   id int not null auto_increment,
---   name varchar(100),
---   primary key(id)
--- );
 
 -- client
 create table if not exists reception.client (
@@ -41,12 +35,13 @@ create table if not exists reception.client (
 
 -- archive
 create table if not exists reception.archive (
-  id int not null auto_increment,
+  id int not null auto_increment, -- pk
+  client_id int not null, -- fk
   name varchar(100),
   reception_date date,
   reception_time time,
-  old_name varchar(255) default ' ', -- evitu null value for concatenation
   last_modification datetime,
+  foreign key(client_id) references client(id),
   primary key(id)
 );
 

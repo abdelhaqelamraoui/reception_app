@@ -1,2 +1,10 @@
 
 
+The problem of archiving is:
+  The deletion on the client causes differences between id
+  in client table and archive table.
+
+Solution:
+  - Add client id to the archve
+  - When updating a client it will be inserted as a new one in
+  the archive with the same client id

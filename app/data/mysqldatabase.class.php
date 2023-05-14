@@ -73,7 +73,7 @@ class MysqlDatabase {
   }
 
 
-  function query($sql, $params = null) {
+  function query($sql, $params = null, $class = 'Client') {
 
     if(!$this->is_connection_established())
       return false;
@@ -100,7 +100,7 @@ class MysqlDatabase {
       return false;
     }
 
-    $data = $query->fetchAll(PDO::FETCH_CLASS, 'Client');
+    $data = $query->fetchAll(PDO::FETCH_CLASS, $class);
     $query->closeCursor();
     $query = null;
     return $data;

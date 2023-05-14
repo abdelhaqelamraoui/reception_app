@@ -16,7 +16,7 @@
     // $mdp->update_client(1, 'Hanane Chakiri');
     // $mdp->delete_client(2);
     // output($mdp->get_clients());
-
+    // output($mdp->get_last_client());
 
   } catch(PDOException $e) {
     print($e);

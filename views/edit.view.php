@@ -12,7 +12,7 @@
     <form method="post">
       <div class="input-group">
         <span class="input-group-text"><?=$model->id?></span>
-        <input type="text" name="new-name" value="<?=$model->name ?>" class="form-control"/>
+        <input type="text" name="new-name" value="<?=$model->name ?>" class="form-control" pattern="(\w| )+"/>
         <button type="submit" name="update" id="update" class="btn btn-success">Update</button>
         <a href="index.php" class="btn btn-outline-success">Cancel</a>
       </div>

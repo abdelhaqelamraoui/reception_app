@@ -12,11 +12,11 @@
       <thead>
         <tr>
         <th>Number</th>
+        <th>ID</th>
         <th>Client ID</th>
         <th>Name</th>          
         <th>Reception date</th>          
-        <th>Reception time</th>          
-        <th>Old name</th>          
+        <th>Reception time</th>                
         <th>Last modification</th>
         </tr>
       </thead>
@@ -26,10 +26,10 @@
           <tr>
             <td>[<?=$index?>]</td>
             <td>[<?=$archived_client->id?>]</td>
+            <td>[<?=$archived_client->client_id?>]</td>
             <td><?=$archived_client->name?></td>          
             <td><?=$archived_client->reception_date?></td>          
             <td><?=$archived_client->reception_time?></td>          
-            <td><?=$archived_client->old_name?></td>          
             <td><?=$archived_client->last_modification?></td>          
           </tr>
         <?php endforeach?>

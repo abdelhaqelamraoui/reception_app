@@ -22,10 +22,6 @@
           <a class="nav-link active link-warning" aria-current="page" href="./index.php">User</a>
         </li>
       <?php endif?>
-
-        <li class="nav-item">
-          <a class="nav-link active link-light" aria-current="page" href="#" id="link-about">About</a>
-        </li>
           
       </ul>
 

@@ -31,7 +31,7 @@
     <div>
       <form action="./scripts/index.script.php" method="post" >
         <div class="input-group">
-          <input type="text" name="client-name" placeholder="Karim El Karimi" class="form-control">
+          <input type="text" name="client-name" placeholder="Karim El Karimi" class="form-control" pattern="(\w| )+">
           <button type="submit" name="ajouter" class="btn btn-success">Ajouter</button>
         </div>
       </form>
