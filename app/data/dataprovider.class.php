@@ -30,6 +30,8 @@ abstract class DataProvider {
 
   abstract function get_archived_clients();
 
+  abstract function search_client(string $name);
+
 }
 
 

@@ -74,6 +74,14 @@ class MysqlDataProvider extends DataProvider {
     return $this->db->query($sql);
   }
 
+
+  function search_client(string $name) {
+    return $this->db->query(
+      'SELECT * FROM client WHERE name LIKE :name;',
+      [':name' => '%'.$name.'%']
+    );
+  }
+
 }
 
 

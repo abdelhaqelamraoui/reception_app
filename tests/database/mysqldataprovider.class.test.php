@@ -17,6 +17,7 @@
     // $mdp->delete_client(2);
     // output($mdp->get_clients());
     // output($mdp->get_last_client());
+     output($mdp->search_client('Sa'));
 
   } catch(PDOException $e) {
     print($e);

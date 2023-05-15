@@ -1,7 +1,7 @@
 
 
 TODO [0] : write unit test instead of the tests/*
-TODO [0] : add the archiving part
+TODO [1] : add the archiving part
 TODO [0] : add prompts and dialogs
 TODO [0] : organize more all project
 
@@ -15,4 +15,4 @@ TODO [0] : prevent editing or updating a client via the URL but
 
 TODO [0] : add search option for the admin
 
-TODO [0] : styling (last think this of !)
+TODO [1] : styling (last think this of !)

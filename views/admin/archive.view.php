@@ -2,10 +2,11 @@
 
 <div class="container">
 
-  <h3 class="">Admin
-    <a href="./admin.php" class="link fs-5">[Clients]</a>
-    <a href="./archive.php" class="link fs-5">[Archive]</a>
-  </h3>
+  <div class="mb-3">
+    <a href="./admin.php" class="link">Clients</a>
+    <a href="./search.php" class="link">Search</a>
+    <span class="badge bg-success text-white">Archive</span>
+  </div>
 
     <table class="table table-striped">
 

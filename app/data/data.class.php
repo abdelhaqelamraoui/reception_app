@@ -48,6 +48,11 @@ final class Data {
   static function get_archived_clients() {
     return self::$dp->get_archived_clients();
   }
+
+
+  static function search_client(string $name) {
+    return self::$dp->search_client($name);
+  }
 }
 
 ?>
