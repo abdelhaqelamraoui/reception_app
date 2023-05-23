@@ -3,7 +3,7 @@
 
 
   require_once('app/app.php');
-  ensure_user_is_authenticated();
+  ensure_user_or_admin_authenticated();
   
   try {
     Data::init(new MysqlDataProvider());

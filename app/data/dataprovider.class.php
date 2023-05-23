@@ -32,6 +32,19 @@ abstract class DataProvider {
 
   abstract function search_client(string $name);
 
+  // User
+
+  abstract function add_new_user(string $first_name, string $last_name, string $username, string $password);
+  abstract function update_user(int $id, string $first_name, string $last_name, string $username, string $password);
+  abstract function get_users();
+  abstract function get_user(string $username);
+
+  // Admin
+
+  abstract function update_admin(string $username, string $password);
+  abstract function get_admin();
+
+
 }
 
 

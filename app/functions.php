@@ -29,7 +29,7 @@
     return $_SERVER['REQUEST_METHOD'] === 'POST';
   }  
 
-   /**
+  /**
    * @return true if the request method is GET, else `false`
    */
   function is_get() {
@@ -44,9 +44,9 @@
     return ($temp === false)? '' : $temp;
   }
 
-  function output($value) {
+  function output($value, $dump = false) {
     echo '<pre>';
-    print_r($value);
+    $dump ? var_dump($value) : print_r($value);
     echo '</pre>';
   }
   
@@ -89,4 +89,39 @@
     }
   }
 
+  function hash_data($data) {
+    return hash('sha256', $data);
+  }
+  
+  function encrypt_data($data, $key) {
+    $cipher = 'aes-128-gcm';
+    // if (in_array($cipher, openssl_get_cipher_methods())) {
+      // need to store these for decryption
+      // TODO [0] store this vars in order to use them in decryption
+      // $ivlen = openssl_cipher_iv_length($cipher);
+      // $iv = openssl_random_pseudo_bytes($ivlen);
+      // return openssl_encrypt($data, $cipher, $key, $options=0, $iv, $tag);
+      // return openssl_encrypt($data, $cipher, $key);
+    // }
+    // return false;
+    return $data;
+  }
+  
+    function decrypt_data($data, $key) {
+      $cipher = 'aes-128-gcm';
+      // if (in_array($cipher, openssl_get_cipher_methods())) {
+      //   // need to use the stored ones in the encryption
+      //   // return openssl_decrypt($ciphertext, $cipher, $key, $options=0, $iv, $tag);
+      //   return openssl_decrypt($data, $cipher, $key);
+      // }
+      // return false;
+      return $data;
+    }
+
+  function ensure_user_or_admin_authenticated() {
+    if(! (is_admin_authenticated() || is_user_authenticated()) ) {
+      redirect('login.php');
+    }
+  }
+  
 ?>

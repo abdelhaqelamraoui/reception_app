@@ -21,12 +21,18 @@
         <li class="nav-item">
           <a class="nav-link active link-warning" aria-current="page" href="./index.php">User</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active link-warning" aria-current="page" href="./updatecredentials.php">Update credentials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active link-warning" aria-current="page" href="./signup.php">Add user</a>
+        </li>
       <?php endif?>
           
       </ul>
 
 
-      <?php if(is_user_authenticated()):?>
+      <?php if(is_user_authenticated() || is_admin_authenticated()):?>
         <form action="./scripts/header.script.php" method="post">
           <button type="submit" name="log-out" id="log-out" class="btn btn-sm btn-outline-warning">Log out</button>
         </form>

@@ -28,7 +28,7 @@
     <tbody>
       <?php foreach($model as $index => $client):?>
         <tr>
-          <td>[<?=$index?>]</td>
+          <td>[<?=$index + 1?>]</td>
           <td>[<?=$client->id?>]</td>
           <td><?=$client->name?></td>          
           <td><?=$client->reception_date?></td>          

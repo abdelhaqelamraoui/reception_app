@@ -1,16 +1,13 @@
 
 
-<div class="container">
+<div class="container-fluid d-flex flex-column align-items-center" id="form-container">
 
-  <h1>Remove: <?=$model->name?></h1>
+  <h1 class="mt-5">Remove: <?=$model->name?></h1>
 
-  <div>    
-      <h3>Are you sure you want to delete ?</h3>
-      <form method="post">
-        <button type="submit" name="proceed">Yes</button>
-        <button>
-          <a href="index.php">Cancel</a>
-        </button>
+  <div class="">    
+      <form method="post" class="d-flex gap-5 mt-4">
+        <button type="submit" name="proceed" class="btn btn-outline-danger px-4">Yes</button>
+          <a href="index.php" class="btn btn-success px-3">Cancel</a>
         <input type="hidden" name="client-id" value="<?=$model->id?>">
       </form>
       </form>

@@ -6,7 +6,7 @@
 
   require_once('app/app.php');
   // TODO : ensure the user is not logged in
-  // ensure_user_is_authenticated();
+  // ensure_user_or_admin_authenticated();
 
   if(is_get()) {
     $error_id = intval(sanitize($_GET['id']));

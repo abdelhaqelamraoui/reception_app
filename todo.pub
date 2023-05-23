@@ -4,6 +4,10 @@ TODO [0] : write unit test instead of the tests/*
 TODO [1] : add the archiving part
 TODO [0] : add prompts and dialogs
 TODO [0] : organize more all project
+    ├── public
+    ├── src
+    ├── tests
+    └── tools
 
 TODO [0] : Use Javascript to separate backend from the frontend
     - Fetch ?
@@ -14,5 +18,12 @@ TODO [0] : prevent editing or updating a client via the URL but
         only if the request is sent from the index page
 
 TODO [0] : add search option for the admin
+
+TODO [0] : add exceptions 
+
+
+TODO [0] : add an init() for the first use of the app.
+           The admin would be admin 1234 by default
+
 
 TODO [1] : styling (last think this of !)

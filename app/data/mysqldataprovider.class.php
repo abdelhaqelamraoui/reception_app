@@ -35,7 +35,8 @@ class MysqlDataProvider extends DataProvider {
   }
 
   function get_clients() {
-    return $this->db->query('SELECT * FROM client;');
+    $res = $this->db->query('SELECT * FROM client;');
+    return empty($res) ? false : $res;
   }
 
   function close() {
@@ -81,6 +82,73 @@ class MysqlDataProvider extends DataProvider {
       [':name' => '%'.$name.'%']
     );
   }
+
+
+    // User
+
+    function add_new_user(string $first_name, string $last_name, string $username, string $password) {
+      return $this->db->execute(
+        'INSERT INTO users(first_name, last_name, username, password) VALUES(:fn, :ln, :un, :pw);',
+        [':fn' => $first_name, ':ln' => $last_name, ':un' => $username, ':pw' => $password]
+      );
+    }
+
+    function update_user(int $id, string $first_name, string $last_name, string $username, string $password) {
+      return $this->db->execute(
+        'UPDATE users SET first_name = :fn, last_name = :ln, username = :un, password = :pw WHERE id = :id',
+        [':fn' => $first_name, ':ln' => $last_name, ':un' => $username, ':pw' => $password, ':id' => $id]
+      );
+    }
+
+    function get_users() {
+      return $this->db->query('SELECT * FROM users', null, 'User');
+    }
+  
+    function get_user(string $username) {
+      $res =  $this->db->query(
+        'SELECT * FROM users WHERE username = :un;',
+        [':un' => $username],
+        'User'
+      );
+      return empty($res) ? false : $res[0];
+    }
+    
+    // Admin
+      
+    /**
+     * reteives the admin credentials from the databases as an Admin instace
+     * @return `Admin` on success, `false` on failure
+     */
+    function get_admin() {
+      $res = $this->db->query('SELECT * FROM admin', null, 'Admin');
+      return empty($res) ? false : $res[0];
+    }
+      
+    /**
+     * sets the admin credentials
+     * @param  string $username
+     * @param  string $password
+     * @return bool `true` if succeeded, else `false`
+     */
+    function set_admin($username, $password) {
+      return $this->db->execute(
+        'INSERT INTO admin VALUES(1, :un, :pw);',
+        [':un' => $username, ':pw' => $password]
+      );
+    }
+      
+    /**
+     * updates the existing admin with new credentials
+     * @param  string $username
+     * @param  string $password
+     * @return bool `true` if succeeded, else `false`
+     */
+    function update_admin($username, $password) {
+      return $this->db->execute(
+        'UPDATE admin SET username = :un, password = :pw WHERE id = 1;',
+        [':un' => $username, ':pw' => $password]
+      );
+    }
 
 }
 

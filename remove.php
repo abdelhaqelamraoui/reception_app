@@ -4,7 +4,7 @@
 
   require_once('app/app.php');
 
-  ensure_user_is_authenticated();
+  ensure_user_or_admin_authenticated();
 
   /* 
     GET part for redirection from the index page in order to delete

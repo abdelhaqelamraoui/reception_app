@@ -17,7 +17,7 @@
       <tbody>
       <?php foreach($model as $index => $client):?>
         <tr>
-          <td>[<?=$index?>]</td>
+          <td>[<?=$index + 1?>]</td>
           <td>[<?=$client->id?>]</td>
           <td><?=$client->name?></td> 
           <td><a href="edit.php?id=<?=$client->id?>" class="link">Edit</a></td>
