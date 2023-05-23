@@ -46,3 +46,12 @@ create table if not exists reception.archive (
 );
 
 
+-- config
+create table if not exists reception.config (
+  id int not null auto_increment, -- pk
+  ckey varchar(255) not null unique,
+  cvalue varchar(255) not null,
+  primary key(id)
+);
+
+

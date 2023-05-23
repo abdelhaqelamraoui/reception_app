@@ -7,8 +7,8 @@
   if(is_user_authenticated() || is_admin_authenticated()) {
     redirect('index.php');
   }
-
-  load_view('login');
+ 
+  load_view('login', ['signup' => is_signup_allowed()]);
 
   
   if(is_post()) {

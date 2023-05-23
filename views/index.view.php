@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-      <?php foreach($model as $index => $client):?>
+      <?php foreach($data as $index => $client):?>
         <tr>
           <td>[<?=$index + 1?>]</td>
           <td>[<?=$client->id?>]</td>

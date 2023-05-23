@@ -12,7 +12,7 @@
         <button type="submit" name="search" class="btn btn-sm btn-primary px-3">Search</button>
   </form>
   
-  <?php if(!empty($model)): ?>
+  <?php if(!empty($data)): ?>
     <table class="table table-striped">
 
     <thead>
@@ -26,7 +26,7 @@
     </thead>
 
     <tbody>
-      <?php foreach($model as $index => $client):?>
+      <?php foreach($data as $index => $client):?>
         <tr>
           <td>[<?=$index?>]</td>
           <td>[<?=$client->id?>]</td>

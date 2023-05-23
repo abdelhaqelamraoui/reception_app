@@ -16,13 +16,14 @@
     // Data::add_client('Salim Salimi');
     // Data::update_client(1, 'Hanane Hanani');
     // output(Data::get_clients());
-    output(Data::delete_client(8), true);
+    // output(Data::delete_client(8), true);
     // Data::delete_client(16);
     // output(Data::get_clients());
     // output(Data::get_admin());
     // output(Data::get_users());
     // output(Data::get_user('abdel'));
     // output(Data::get_user('abdel') instanceof User, true);
+    output(Data::get_config('allow-signup'));
     Data::close();
 
   } catch(PDOException $e) {

@@ -77,6 +77,21 @@ function ensure_user_is_authenticated() {
 }
 
 
+/**
+ * is_signup_allowed
+ *
+ * @return bool
+ */
+function is_signup_allowed() {
+  Data::init(new MysqlDataProvider());
+  $config = Data::get_config('allow-signup');
+  Data::close();
+  if($config) {
+    return $config->cvalue === 'yes';
+  }
+  return false;
+}
+
 
 
 ?>

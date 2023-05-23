@@ -150,6 +150,36 @@ class MysqlDataProvider extends DataProvider {
       );
     }
 
+    // config
+
+    function get_configs() {
+      $res = $this->db->query('SELECT * FROM config;', 'Config');
+      return empty($res) ? false : $res;
+    }
+
+    function get_config(string $ckey) {
+      $res = $this->db->query('SELECT * FROM config WHERE ckey = :k;',[':k' => $ckey], 'Config');
+      return empty($res) ? false : $res[0];
+    }
+
+    function delete_config(string $ckey) {
+      return $this->db->execute('DELETE FROM config WHERE ckey = :k;', [':k' => $ckey]);
+    }
+
+    function add_config(string $ckey, string $cvalue) {
+      return $this->db->execute(
+        'INSERT INTO config(ckey, cvalue) VALUES(:k, :v);',
+        [':k' => $ckey, ':v' => $cvalue]
+      );
+    }
+
+    function update_config(string $ckey, string $cvalue) {
+      return $this->db->execute(
+        'UPDATE config SET cvalue = :v WHERE ckey = :k',
+        [':k' => $ckey, ':v' => $cvalue]
+      );
+    }
+
 }
 
 

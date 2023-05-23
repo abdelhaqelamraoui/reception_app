@@ -164,6 +164,61 @@ final class Data {
   static function get_admin() {
     return self::$dp->get_admin();
   }
+
+  // config
+  
+  /**
+   * get_configs
+   *
+   * @return array
+   */
+  static function get_configs() {
+    return self::$dp->get_configs();
+  }
+  
+  /**
+   * get_config
+   *
+   * @param  string $ckey
+   * @return Config
+   */
+  static function get_config(string $ckey) {
+    return self::$dp->get_config($ckey);
+  }
+  
+  /**
+   * delete_config
+   *
+   * @param  string $ckey
+   * @return bool
+   */
+  static function delete_config(string $ckey) {
+    return self::$dp->delete_config($ckey);
+  }
+  
+  /**
+   * add_config
+   *
+   * @param  string $ckey
+   * @param  string $cvalue
+   * @return bool
+   */
+  static function add_config(string $ckey, string $cvalue) {
+    return self::$dp->add_config($ckey, $cvalue);
+  }
+  
+  /**
+   * update_config
+   *
+   * @param  string $ckey
+   * @param  string $cvalue
+   * @return bool
+   */
+  static function update_config(string $ckey, string $cvalue) {
+    return self::$dp->update_config($ckey, $cvalue);
+  }
+
+
 }
 
 ?>

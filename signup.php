@@ -3,6 +3,16 @@
 
 
   require_once('app/app.php');
+
+  if(!is_signup_allowed() && !is_admin_authenticated()) {
+    /* 
+      preventing the page to be loaded :
+        1- for the user when the sign up is not allowed by the admin
+        2- for any user when the admin is not authenticated
+    */
+    redirect('login.php');
+  }
+
   if(is_user_authenticated()) {
     /* 
       Not including admin to give him access to create a new user
@@ -32,6 +42,7 @@
           try {
             Data::init(new MysqlDataProvider());
             Data::add_new_user($first_name, $last_name, $username, $password);
+            // disallow_signup(); // optional acording to the admins plan !
             Data::close();
           } catch (Exception $e) {
             // TODO [0] : error handling

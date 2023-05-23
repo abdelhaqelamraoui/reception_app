@@ -27,6 +27,9 @@
         <li class="nav-item">
           <a class="nav-link active link-warning" aria-current="page" href="./signup.php">Add user</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active link-warning" aria-current="page" href="./managesignup.php">Manage signup</a>
+        </li>
       <?php endif?>
           
       </ul>

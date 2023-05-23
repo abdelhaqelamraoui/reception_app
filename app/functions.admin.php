@@ -57,7 +57,38 @@ function ensure_admin_is_authenticated() {
 }
 
 
+/**
+ * allow_signup
+ *
+ * @return void
+ */
+function allow_signup() {
+  Data::init(new MysqlDataProvider());
+  $config = Data::get_config('allow-signup');
+  if($config instanceof Config) {
+    Data::update_config('allow-signup', 'yes');
+  } else {
+    Data::add_config('allow-signup', 'yes');
+  }
+  Data::close();
+}
 
+
+/**
+ * disallow_signup
+ *
+ * @return void
+ */
+function disallow_signup() {
+  Data::init(new MysqlDataProvider());
+  $config = Data::get_config('allow-signup');
+  if($config instanceof Config) {
+    Data::update_config('allow-signup', 'no');
+  } else {
+    Data::add_config('allow-signup', 'no');
+  }
+  Data::close();
+}
 
 
 

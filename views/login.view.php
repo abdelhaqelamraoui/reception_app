@@ -16,9 +16,11 @@
       <button type="submit" name="log-in" class="btn btn-primary px-4">Log in</button>
     </div>
 
-    <div class="mb-3 text-center mt-4">
-      <a href="signup.php" class="link">sign up</a>
-    </div>
+    <?php if($data['signup']):?>
+      <div class="mb-3 text-center mt-4">
+        <a href="signup.php" class="link">sign up</a>
+      </div>
+    <?php endif ?>
   
   </form>
 

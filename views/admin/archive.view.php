@@ -23,7 +23,7 @@
       </thead>
 
       <tbody>
-        <?php foreach($model as $index => $archived_client):?>
+        <?php foreach($data as $index => $archived_client):?>
           <tr>
             <td>[<?=$index?>]</td>
             <td>[<?=$archived_client->id?>]</td>

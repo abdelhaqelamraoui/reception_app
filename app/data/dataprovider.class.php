@@ -44,6 +44,14 @@ abstract class DataProvider {
   abstract function update_admin(string $username, string $password);
   abstract function get_admin();
 
+  // config
+
+  abstract function get_configs();
+  abstract function get_config(string $ckey);
+  abstract function delete_config(string $ckey);
+  abstract function add_config(string $ckey, string $cvalue);
+  abstract function update_config(string $ckey, string $cvalue);
+
 
 }
 

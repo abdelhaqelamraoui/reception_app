@@ -8,9 +8,9 @@
   /**
    * loads a view to the layout
    * @param  string $view_name e.g.: 'index'
-   * @param  mixed $model data to use in the view
+   * @param  mixed $data data to use in the view
    */
-  function load_view(string $view_name, $model='') {
+  function load_view(string $view_name, $data='') {
     require(APP_PATH . "/views/layout.view.php");
   }
   

@@ -17,13 +17,23 @@ TODO [0] : Use Javascript to separate backend from the frontend
 TODO [0] : prevent editing or updating a client via the URL but 
         only if the request is sent from the index page
 
-TODO [0] : add search option for the admin
+TODO [1] : add search option for the admin
 
 TODO [0] : add exceptions 
 
 
 TODO [0] : add an init() for the first use of the app.
            The admin would be admin 1234 by default
+
+TODO [1] : fix : the sign up in the login page should apprear only if 
+           the admin allowed that
+
+TODO [0] : manage users by the admin
+            + list
+            + remove
+            + add (already added)
+
+TODO [0] : add an admin panel control
 
 
 TODO [1] : styling (last think this of !)
